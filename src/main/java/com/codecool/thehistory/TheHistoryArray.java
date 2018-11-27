@@ -4,19 +4,27 @@ import java.util.Arrays;
 
 public class TheHistoryArray implements TheHistory {
 
-    /**
-     * This implementation should use a String array so don't change that!
-     */
     private String[] wordsArray = new String[0];
 
     @Override
     public void add(String text) {
-        //TODO: check the TheHistory interface for more information
+        String[] words = text.split(" ");
+        String[] newWordsArray = new String[words.length + this.wordsArray.length];
+        System.arraycopy(wordsArray, 0, newWordsArray, 0, wordsArray.length);
+        System.arraycopy(words, 0, newWordsArray, this.wordsArray.length, words.length);
+        this.wordsArray = new String[newWordsArray.length];
+        System.arraycopy(newWordsArray, 0, this.wordsArray, 0, newWordsArray.length);
     }
 
     @Override
     public void removeWord(String wordToBeRemoved) {
         //TODO: check the TheHistory interface for more information
+
+        /**
+         * Removes all occurrences of a word from the stored data
+         *
+         * @param wordToBeRemoved: only one word. No spaces just the word otherwise it won't remove anything
+         */
     }
 
     @Override
