@@ -31,7 +31,7 @@ public class TheHistoryArray implements TheHistory {
 
     @Override
     public void clear() {
-        //TODO: check the TheHistory interface for more information
+        this.wordsArray = new String[0];
     }
 
     @Override
