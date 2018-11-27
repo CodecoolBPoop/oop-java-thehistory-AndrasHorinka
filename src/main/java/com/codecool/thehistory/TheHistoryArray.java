@@ -1,6 +1,7 @@
 package com.codecool.thehistory;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class TheHistoryArray implements TheHistory {
 
@@ -18,13 +19,9 @@ public class TheHistoryArray implements TheHistory {
 
     @Override
     public void removeWord(String wordToBeRemoved) {
-        //TODO: check the TheHistory interface for more information
-
-        /**
-         * Removes all occurrences of a word from the stored data
-         *
-         * @param wordToBeRemoved: only one word. No spaces just the word otherwise it won't remove anything
-         */
+        List<String> updatedList = Arrays.asList(String, wordsArray);
+        updatedList.removeAll(Arrays.asList("a"));
+        this.wordsArray = updatedList.toArray(new String[0]);
     }
 
     @Override
