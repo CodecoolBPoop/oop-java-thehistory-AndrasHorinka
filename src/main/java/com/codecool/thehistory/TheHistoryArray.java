@@ -7,6 +7,7 @@ public class TheHistoryArray implements TheHistory {
 
     private String[] wordsArray = new String[0];
 
+
     @Override
     public void add(String text) {
         String[] words = text.split(" ");
@@ -16,6 +17,7 @@ public class TheHistoryArray implements TheHistory {
         this.wordsArray = new String[newWordsArray.length];
         System.arraycopy(newWordsArray, 0, this.wordsArray, 0, newWordsArray.length);
     }
+
 
     @Override
     public void removeWord(String wordToBeRemoved) {
@@ -50,7 +52,6 @@ public class TheHistoryArray implements TheHistory {
 
     @Override
     public int size() {
-
         return this.wordsArray.length;
     }
 
@@ -62,25 +63,18 @@ public class TheHistoryArray implements TheHistory {
     @Override
     public void replaceOneWord(String from, String to) {
         Arrays.sort(wordsArray);
-        int nextIndex = wordsArray.length;
-        while (nextIndex >= 0) {
-            nextIndex = Arrays.binarySearch(this.wordsArray, from);
-            this.wordsArray[nextIndex] = to;
+        int indexOfSearchString = wordsArray.length;
+        while (indexOfSearchString >= 0) {
+            indexOfSearchString = Arrays.binarySearch(this.wordsArray, from);
+            this.wordsArray[indexOfSearchString] = to;
         }
     }
 
     @Override
     public void replaceMoreWords(String[] fromWords, String[] toWords) {
-        //TODO: check the TheHistory interface for more information
-
-//        /**
-//         * Replaces all occurrences of a sentence or part of a sentence with another (part of a) sentence.
-//         * The order of words are important. Also the 'fromWords' and 'toWords' arrays are not necessarily same sized.
-//         * NOTE: replace() method uses this method!
-//         *
-//         * @param fromWords: array of words what should be replaced
-//         * @param toWords:   array of words which should replace the words of 'fromWords'
-//         */
+        for (int i = 0; i <= fromWords.length, i++) {
+            replaceOneWord(fromWords[i], toWords[i]);
+        }
     }
 
     @Override
