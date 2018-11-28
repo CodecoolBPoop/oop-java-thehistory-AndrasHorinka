@@ -3,7 +3,7 @@ package com.codecool.thehistory;
 import java.util.Arrays;
 import java.util.List;
 
-public class TheHistoryArray implements TheHistory {
+public class TheHistoryArray implements com.codecool.thehistory.TheHistory {
 
     private String[] wordsArray = new String[0];
 
@@ -21,7 +21,7 @@ public class TheHistoryArray implements TheHistory {
 
     @Override
     public void removeWord(String wordToBeRemoved) {
-        List<String> updatedList = Arrays.asList(String, wordsArray);
+        List<String> updatedList = Arrays.asList(wordsArray);
         updatedList.removeAll(Arrays.asList(wordToBeRemoved));
         this.wordsArray = updatedList.toArray(new String[0]);
 
@@ -63,7 +63,7 @@ public class TheHistoryArray implements TheHistory {
     @Override
     public void replaceOneWord(String from, String to) {
         Arrays.sort(wordsArray);
-        int indexOfSearchString = wordsArray.length;
+        int indexOfSearchString = Arrays.binarySearch(this.wordsArray, from);
         while (indexOfSearchString >= 0) {
             indexOfSearchString = Arrays.binarySearch(this.wordsArray, from);
             this.wordsArray[indexOfSearchString] = to;
@@ -72,7 +72,7 @@ public class TheHistoryArray implements TheHistory {
 
     @Override
     public void replaceMoreWords(String[] fromWords, String[] toWords) {
-        for (int i = 0; i <= fromWords.length, i++) {
+        for (int i = 0; i <= fromWords.length; i++) {
             replaceOneWord(fromWords[i], toWords[i]);
         }
     }
