@@ -40,7 +40,9 @@ public class TheHistoryArrayList implements TheHistory {
 
     @Override
     public void replaceMoreWords(String[] fromWords, String[] toWords) {
-        //TODO: check the TheHistory interface for more information
+        for (int i = 0; i <= size(); i++) {
+            replaceOneWord(fromWords[i], toWords[i]);
+        }
     }
 
     @Override
