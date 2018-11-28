@@ -29,7 +29,7 @@ public class TheHistoryArrayList implements TheHistory {
 
     @Override
     public void clear() {
-        //TODO: check the TheHistory interface for more information
+        this.wordsArrayList.clear();
     }
 
     @Override
