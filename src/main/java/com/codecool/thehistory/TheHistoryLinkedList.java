@@ -33,7 +33,11 @@ public class TheHistoryLinkedList implements TheHistory {
 
     @Override
     public void replaceOneWord(String from, String to) {
-        //TODO: check the TheHistory interface for more information
+        int indexOfWord = this.wordsLinkedList.indexOf(to);
+        while (indexOfWord >= 0) {
+            this.wordsLinkedList.set(indexOfWord, to);
+            indexOfWord = this.wordsLinkedList.indexOf(to);
+        }
     }
 
     @Override
