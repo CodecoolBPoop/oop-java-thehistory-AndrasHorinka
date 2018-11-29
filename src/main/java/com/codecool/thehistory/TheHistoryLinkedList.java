@@ -18,7 +18,11 @@ public class TheHistoryLinkedList implements TheHistory {
 
     @Override
     public void removeWord(String wordToBeRemoved) {
-        //TODO: check the TheHistory interface for more information
+        int indexOfWord = this.wordsLinkedList.indexOf(wordToBeRemoved);
+        while (indexOfWord >= 0) {
+            this.wordsLinkedList.remove(indexOfWord)
+            indexOfWord = this.wordsLinkedList.indexOf(wordToBeRemoved);
+        }
     }
 
     @Override
