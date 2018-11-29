@@ -1,9 +1,7 @@
 package com.codecool.thehistory;
 
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.ListIterator;
 
 public class TheHistoryLinkedList implements TheHistory {
     /**
@@ -20,7 +18,7 @@ public class TheHistoryLinkedList implements TheHistory {
     public void removeWord(String wordToBeRemoved) {
         int indexOfWord = this.wordsLinkedList.indexOf(wordToBeRemoved);
         while (indexOfWord >= 0) {
-            this.wordsLinkedList.remove(indexOfWord)
+            this.wordsLinkedList.remove(indexOfWord);
             indexOfWord = this.wordsLinkedList.indexOf(wordToBeRemoved);
         }
     }
